@@ -1,0 +1,21 @@
+print("First negative number in every window of size k")
+
+arr = [12,-1,-7,8,-15,30,16,28]
+i,j = 0,0
+k,out,neg = 3,[],[]
+while j < len(arr):
+    if arr[j] < 0:  #append negative values to a new array neg
+        neg.append(arr[j])
+    if j-i+1 < k:
+        j = j+1
+    elif j-i+1 == k:
+        if len(neg)==0:
+            out.append(0) #no negative number in subarray
+        else:
+            out.append(neg[0])
+        if arr[i] < 0 and arr[i] == neg[0]:
+            neg.pop(0)
+        i = i+1
+        j = j+1
+    print(neg,out)
+print(out)
