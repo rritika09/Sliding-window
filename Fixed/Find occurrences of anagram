@@ -1,0 +1,17 @@
+print("Count occurances of anagram")
+
+arr="forxxorfxdofr"
+ana = ['for','fro','orf','ofr','rfo','rof']
+k = 3
+i,j,cnt = 0,0,0
+while j < len(arr):
+    if j-i+1 < k:
+        j=j+1
+    if j-i+1 == k:
+        if arr[i:j+1] in ana:
+            cnt = cnt+1
+        j = j+1
+        i = i+1
+    
+print(cnt)
+            
